@@ -7,8 +7,15 @@
 	
 	function sildeNav(elm){
 		elm.on('click',function(){
+			// 先归置所有选项为默认状态
+			$(this).parents('ul').find('.list2nd').slideUp();
+			$(this).parents('ul').find('.list2nd').prev().css({backgroundImage:' url("img/mainbottom.png")'});
+			//  哨兵值恢复为 true
+			if(!Flag1){
+				Flag1 = !Flag1;
+			}
+			// 开始判断
 			if(Flag1){
-				$(this).parents('ul').find('.list2nd').slideUp();
 				$(this).css({backgroundImage:' url("img/mainbottom2.png")'});
 				$(this).next().slideDown();
 				Flag1 = false;
@@ -57,6 +64,6 @@
 			flag2 = !flag2;
 		}
 		
-	})
+	});
 	
 	
