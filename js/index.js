@@ -8,11 +8,12 @@
 	function sildeNav(elm){
 		elm.on('click',function(){
 			if(Flag1){
-				$(this).css({backgroundImage:' url("img/mainbottom2.png")'})
+				$(this).parents('ul').find('.list2nd').slideUp();
+				$(this).css({backgroundImage:' url("img/mainbottom2.png")'});
 				$(this).next().slideDown();
 				Flag1 = false;
 			}else{
-				$(this).css({backgroundImage:' url("img/mainbottom.png")'})
+				$(this).css({backgroundImage:' url("img/mainbottom.png")'});
 			
 				$(this).next().slideUp();
 				Flag1 = true;
@@ -43,6 +44,7 @@
 			flag2 = !flag2;
 		}else{
 			$('.mubu').slideUp();
+			$('.mubuinner .list2nd').slideUp();
 			$this.removeClass('fa-times').addClass('fa-bars');
 			$('.main').css({display:'block'});
 			$('.mubuinner li a').css({color:"#2f2f2f" , 
