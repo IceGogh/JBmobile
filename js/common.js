@@ -44,10 +44,12 @@
 				document.getElementsByTagName('head')[0].appendChild(HideMain);
 			});
 			flag2 = !flag2;
+
 		}else{
+
 			$('.mubu').slideUp();
-			$('.mubuinner .list2nd').slideUp();
-			$('.mubuinner li > a ')
+			$('.list2nd').slideUp();
+			$('.list2nd').prev()
 				.attr('data-flag','true')
 				.css({backgroundImage:' url("img/mainbottom.png")'});
 			$this.removeClass('fa-times').addClass('fa-bars');
@@ -77,6 +79,10 @@
 
 	$('a[data-keys]').on('click',function(){
 		var Keys = $(this).attr('data-keys');
+		//  先判断 mubu 是否放下状态
+		if(!flag2){
+			$('.topMenus span').trigger("click");
+		}
 
 		$.ajax({
 			url:'htmls/'+ Keys +'.html',
@@ -91,9 +97,14 @@
 			var CssLink = document.createElement('link');
 			CssLink.rel = "stylesheet";
 			CssLink.type = "text/css";
-			CssLink.href = "css/" + Keys + ".css";
+			CssLink.href = "css/page.css";
 			document.getElementsByTagName('head')[0].appendChild(CssLink);
-			$('html,body').animate({scrollTop:0},500)
+			$('html,body').animate({scrollTop:0},500);
+			$('.list2nd').slideUp();
+			$('.list2nd').prev()
+				.attr('data-flag','true')
+				.css({backgroundImage:' url("img/mainbottom.png")'});
+
 		}
 	});
 	
