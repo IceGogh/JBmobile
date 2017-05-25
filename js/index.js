@@ -5,14 +5,18 @@
 	function sildeNav(elm){
 		elm.on('click',function(){
 			// 开始判断
+				// 若 点击未展开的 a
 			if($(this).attr('data-flag') == "true"){
+				// 全部归置
 				$(this).parents('ul').find('.list2nd').slideUp();
 				$(this).parents('ul').find('.list2nd').prev().css({backgroundImage:' url("img/mainbottom.png")'});
+				$(this).parents('ul').find('li > a').attr('data-flag','true');
+				// 选中 a 改变
 				$(this).css({backgroundImage:' url("img/mainbottom2.png")'});
 				$(this).next().slideDown();
-				$(this).parents('ul').find('li > a').attr('data-flag','true');
 				$(this).attr('data-flag','false')
 			}
+				// 若 点击已展开的 a
 			else{
 				$(this).css({backgroundImage:' url("img/mainbottom.png")'});
 				$(this).next().slideUp();
@@ -52,7 +56,6 @@
 			});
 			flag2 = !flag2;
 		}
-		
 	});
 	
 	
