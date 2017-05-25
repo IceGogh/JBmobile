@@ -32,12 +32,17 @@
 			$('.mubu').slideDown();
 			$this.removeClass('fa-bars').addClass('fa-times');
 			$('.mubu').promise().done(function(){
-				$('.main').css({display:'none'});
 				$('.logo').addClass('mubulogo');
 				$this.css({color:'#fff'});
 				$('.mubuinner li a ').css({color:"rgba(255,255,255,.7)" ,  "transform": "translate(0) scale(1)"});
 				$('.mubuinner > div > a').css({opacity:'1'});
-			})
+				var HideMain = document.createElement('link');
+				HideMain.className='HidenM';
+				HideMain.rel = "stylesheet";
+				HideMain.type = "text/css";
+				HideMain.href = "css/mubuHide.css";
+				document.getElementsByTagName('head')[0].appendChild(HideMain);
+			});
 			flag2 = !flag2;
 		}else{
 			$('.mubu').slideUp();
@@ -46,7 +51,6 @@
 				.attr('data-flag','true')
 				.css({backgroundImage:' url("img/mainbottom.png")'});
 			$this.removeClass('fa-times').addClass('fa-bars');
-			$('.main').css({display:'block'});
 			$('.mubuinner li a').css({color:"#2f2f2f" , transform:"translate(75px,-15px) scale(1.2)"});
 			$('.mubu').promise().done(function(){	
 				$('.logo').removeClass('mubulogo');
@@ -54,7 +58,19 @@
 					$('.mubuinner > div > a').css({opacity:0});
 			});
 			flag2 = !flag2;
+			$('.HidenM').remove();
 		}
+	});
+
+	//  return home page
+	$('.returnHome').on('click',function(){
+		$('.transfCss').attr('href','css/transf.css');
+		$('html,body').animate({scrollTop:0},500)
+	});
+
+	// toTop
+	$('.toTop').on('click',function(){
+		$('html,body').animate({scrollTop:0},500)
 	});
 
 	// click <a> main 内容替换
@@ -70,12 +86,14 @@
 		});
 
 		function callbk(data){
-			$('.main').html(data);
+			$('.transfCss').attr('href','css/transfNo.css');
+			$('.main0').html(data);
 			var CssLink = document.createElement('link');
 			CssLink.rel = "stylesheet";
 			CssLink.type = "text/css";
 			CssLink.href = "css/" + Keys + ".css";
-			document.getElementsByTagName('head')[0].appendChild(CssLink)
+			document.getElementsByTagName('head')[0].appendChild(CssLink);
+			$('html,body').animate({scrollTop:0},500)
 		}
 	});
 	

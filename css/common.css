@@ -240,3 +240,6 @@ footer ul li a {
   display: block;
   color: #fff;
 }
+footer ul li:first-of-type {
+  background: none;
+}
