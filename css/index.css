@@ -1,0 +1,145 @@
+.main {
+  margin-top: 45px;
+  width: 100%;
+}
+.main .banner {
+  position: relative;
+}
+.main .swiper-container {
+  width: 100%;
+}
+.main .swiper-container .swiper-slide {
+  width: 100%;
+}
+.main .swiper-container .swiper-slide img {
+  width: 100%;
+  display: block;
+  float: left;
+}
+.main .swiper-pagination {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  margin-left: -22px;
+}
+.main .swiper-pagination .swiper-pagination-bullet {
+  margin-right: 5px;
+  background: transparent;
+  border: 1px #fff solid;
+}
+.main .swiper-pagination .swiper-pagination-bullet-active {
+  background: rgba(0, 0, 0, 0.4);
+}
+.main .banBLine {
+  width: 100%;
+}
+.main .banBLine img {
+  width: 100%;
+  display: block;
+  float: left;
+}
+.main .iconLine {
+  padding: 0 2%;
+  overflow: hidden;
+  border-bottom: 1px solid #d8d8d8;
+}
+.main .iconLine li {
+  float: left;
+  width: 25%;
+  text-align: center;
+}
+.main .iconLine li a {
+  color: #666;
+  padding: 20px 0;
+  font-size: 1.2em;
+  display: block;
+}
+.main .iconLine li a span {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("../img/01_2.png");
+  background-size: 45px;
+}
+.main .iconLine li:nth-of-type(2) span {
+  background-image: url("../img/02_2.png");
+}
+.main .iconLine li:nth-of-type(3) span {
+  background-image: url("../img/03_2.png");
+}
+.main .iconLine li:nth-of-type(4) span {
+  background-image: url("../img/04_2.png");
+}
+.main .maintitle {
+  padding: 10px 15px;
+  font-size: 1.5em;
+  line-height: 22px;
+}
+.main .maintitle span {
+  font-size: 12px;
+  float: right;
+}
+.main .maintitle span a {
+  color: #999;
+}
+.main .mainbox img {
+  width: 99%;
+}
+.main .mainbox ul li {
+  float: left;
+  width: 50%;
+}
+.main .mainbox ul li a {
+  position: relative;
+  font-size: 0;
+}
+.main .mainbox ul li a p {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 14px;
+  padding: 5px 0;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  color: #fff;
+}
+.main .mainbox > div {
+  position: relative;
+  width: 50%;
+  float: left;
+}
+.main .mainbox .left a {
+  font-size: 0;
+}
+.main .mainbox .right a {
+  display: block;
+  position: relative;
+  font-size: 0;
+}
+.main .mainbox .right a img {
+  width: 100%;
+  float: left;
+}
+.main .mainbox .right a p {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 14px;
+  padding: 5px 0;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: left;
+  color: #fff;
+  text-indent: .5em;
+}
+.main .mainbox .right a p span {
+  padding-left: .5em;
+  font-size: 12px;
+}
+.main .maintitle2 {
+  text-align: center;
+}

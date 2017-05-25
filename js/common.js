@@ -47,8 +47,7 @@
 				.css({backgroundImage:' url("img/mainbottom.png")'});
 			$this.removeClass('fa-times').addClass('fa-bars');
 			$('.main').css({display:'block'});
-			$('.mubuinner li a').css({color:"#2f2f2f" , 
-     transform:"translate(75px,-15px) scale(1.2)"});
+			$('.mubuinner li a').css({color:"#2f2f2f" , transform:"translate(75px,-15px) scale(1.2)"});
 			$('.mubu').promise().done(function(){	
 				$('.logo').removeClass('mubulogo');
 				$this.css({color:'inherit'});
