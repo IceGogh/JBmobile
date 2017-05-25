@@ -56,5 +56,26 @@
 			flag2 = !flag2;
 		}
 	});
-	
+
+	// click <a> main 内容替换
+
+	$('a[data-keys]').on('click',function(){
+		var Keys = $(this).attr('data-keys');
+
+		$.ajax({
+			url:'htmls/'+ Keys +'.html',
+			success:function(data){
+				callbk(data)
+			}
+		});
+
+		function callbk(data){
+			$('.main').html(data);
+			var CssLink = document.createElement('link');
+			CssLink.rel = "stylesheet";
+			CssLink.type = "text/css";
+			CssLink.href = "css/" + Keys + ".css";
+			document.getElementsByTagName('head')[0].appendChild(CssLink)
+		}
+	});
 	
