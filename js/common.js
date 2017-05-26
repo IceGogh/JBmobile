@@ -77,10 +77,12 @@
 
 	// click <a> main 内容替换
 	Transforing($('a[data-keys]'));
-
+	var Keyword = '';
 	function Transforing(elm){
 		elm.on('click',function(){
 			var Keys = $(this).attr('data-keys');
+			KeyWord = Keys.substr(Keys.indexOf('/')+1);
+
 			//  先判断 mubu 是否放下状态
 			if(!flag2){
 				$('.topMenus span').trigger("click");
@@ -96,11 +98,11 @@
 			function callbk(data){
 				$('.transfCss').attr('href','css/transfNo.css');
 				$('.main0').html(data);
-				var CssLink = document.createElement('link');
+/*				var CssLink = document.createElement('link');
 				CssLink.rel = "stylesheet";
 				CssLink.type = "text/css";
 				CssLink.href = "css/page.css";
-				document.getElementsByTagName('head')[0].appendChild(CssLink);
+				document.getElementsByTagName('head')[0].appendChild(CssLink);*/
 				$('html,body').animate({scrollTop:0},500);
 				$('.list2nd').slideUp();
 				$('.list2nd').prev()
@@ -137,7 +139,7 @@
 				var Length = 1;
 
 				$.ajax({
-					url : 'htmls/products/json/chugui'+ (products < 9 ? "0"+products : products) +'.json',
+					url : 'htmls/products/json/'+ KeyWord + (products < 9 ? "0"+products : products) +'.json',
 					dataType :'json',
 					success : function(data){
 						showIMG(data)
