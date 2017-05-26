@@ -105,6 +105,7 @@
 				.attr('data-flag','true')
 				.css({backgroundImage:' url("img/mainbottom.png")'});
 
+
 		}
 	});
-	
+

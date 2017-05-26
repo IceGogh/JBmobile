@@ -9,3 +9,37 @@
 .main0 .newM {
   padding: 30px 20px 0 20px;
 }
+.main0 .allWidth {
+  width: 100%;
+}
+.main0 .allWidth h2 {
+  height: 40px;
+  line-height: 40px;
+  margin: 0 auto 18px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: normal;
+  overflow: hidden;
+}
+.main0 .pageTitle {
+  font-size: 18px;
+  padding: 20px 0;
+  text-align: center;
+}
+.main0 .pageSelect {
+  padding: 0 8% 20px;
+}
+.main0 .pageSelect a {
+  display: block;
+  float: left;
+  width: 21%;
+  margin: 3px 2%;
+  font-size: 14px;
+  background-color: #c8c8c8;
+  text-align: center;
+  padding: 5px 0;
+}
+.main0 .pageSelect a.selProduct {
+  background-color: #4a4a4a;
+  color: #fff;
+}
