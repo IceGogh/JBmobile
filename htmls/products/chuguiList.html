@@ -4,13 +4,13 @@
 <div class="iconLine">
     <ul>
         <li>
-            <a href="/" class="">
+            <a data-keys="products/chugui">
                 <span></span>
                 <p>橱柜定制</p>
             </a>
         </li>
         <li>
-            <a href="/" class="">
+            <a data-keys="products/chugui">
                 <span></span>
                 <p>全屋定制</p>
             </a>
@@ -33,16 +33,21 @@
     橱柜定制
 </div>
 <div class="pageSelect clearfix">
-    <a>现代简约</a>
-    <a>现代时尚</a>
-    <a>简欧风格</a>
-    <a>中式风格</a>
-    <a>实木经典</a>
-    <a>法式风格</a>
-    <a>美式风格</a>
-    <a>北欧风格</a>
+    <a data-page="chuguiList" data-pageNub="0">现代简约</a>
+    <a data-page="chuguiList" data-pageNub="1">现代时尚</a>
+    <a data-page="chuguiList" data-pageNub="2">简欧风格</a>
+    <a data-page="chuguiList" data-pageNub="3">中式风格</a>
+    <a data-page="chuguiList" data-pageNub="4">实木经典</a>
+    <a data-page="chuguiList" data-pageNub="5">法式风格</a>
+    <a data-page="chuguiList" data-pageNub="6">美式风格</a>
+    <a data-page="chuguiList" data-pageNub="7">北欧风格</a>
 </div>
 <div class="allWidth">
     <!--动态添加 list -->
 </div>
+<script>
+    $(function(){
+        loadDetail($('a[data-page]'));
+    })
+</script>
 

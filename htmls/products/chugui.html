@@ -4,13 +4,13 @@
 <div class="iconLine">
     <ul>
         <li>
-            <a href="/" class="">
+            <a data-keys="products/chugui">
                 <span></span>
                 <p>橱柜定制</p>
             </a>
         </li>
         <li>
-            <a href="/" class="">
+            <a data-keys="products/chugui">
                 <span></span>
                 <p>全屋定制</p>
             </a>
@@ -44,46 +44,8 @@
     </a>
 </div>
 <script>
-    //	click a data-page choose the detail list
-    $('a[data-page]').on('click',function(){
-        var pageNub = $(this).attr('data-pageNub');
-        var product = $(this).attr('data-page');
-
-        $.ajax({
-            url:'htmls/products/' + product +'.html',
-            success:function(data){
-                showList(data);
-            }
-        });
-        function showList(data){
-            $('.main0').html(data);
-            $('.pageSelect a')
-                    .removeClass('selProduct')
-                    .eq(pageNub).addClass('selProduct');
-
-            var productsMain = '';
-            var Length = 1;
-            $.ajax({
-                url : 'htmls/products/json/chugui01.json',
-                dataType :'json',
-                success : function(data){
-                    showIMG(data)
-                }
-            });
-            function showIMG(Jsondata){
-                for( var item in Jsondata){
-                    Length ++;
-                }
-                console.log(Jsondata["01"][1]);
-                for(var i=1; i<Length; i++){
-                    productsMain += '<a>'+
-                            '<img src="' + Jsondata[(i <=9 ? "0"+i : i)][1]+'"/>'+
-                            '</a>'+
-                            '<h2>爱情海</h2>'
-                }
-                $('.allWidth').html(productsMain)
-            }
-        }
-
-    });
+    $(function(){
+        loadDetail($('a[data-page]'));
+    })
 </script>
+
