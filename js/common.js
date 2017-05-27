@@ -14,13 +14,18 @@
 				// 选中 a 改变
 				$(this).css({backgroundImage:' url("img/mainbottom2.png")'});
 				$(this).next().slideDown();
-				$(this).attr('data-flag','false')
+				$(this).attr('data-flag','false');
+				$('.news').css({backgroundImage:' url("img/mainbottom3.png")'});
+				$('.join').css({backgroundImage:' url("img/mainbottom3.png")'});
 			}
 			// 若 点击已展开的 a
 			else{
 				$(this).css({backgroundImage:' url("img/mainbottom.png")'});
 				$(this).next().slideUp();
-				$(this).attr('data-flag','true')
+				$(this).attr('data-flag','true');
+				$('.news').css({backgroundImage:' url("img/mainbottom3.png")'});
+				$('.join').css({backgroundImage:' url("img/mainbottom3.png")'});
+
 			}
 		})
 	}
@@ -44,6 +49,7 @@
 				document.getElementsByTagName('head')[0].appendChild(HideMain);
 			});
 			flag2 = !flag2;
+
 
 		}else{
 

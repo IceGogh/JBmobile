@@ -1,0 +1,71 @@
+<div class="allWidth">
+    <h3>
+
+    </h3>
+    <p>
+        <span class="xinwen"></span>
+        <strong>|</strong>
+        <span class="time"></span>
+    </p>
+    <div class="newM">
+        <p></p>
+    </div>
+    <div class="changePage">
+        <div class="prePage">
+            <strong>上一篇:</strong>
+            <span> </span>
+        </div>
+        <div class="nextPage">
+            <strong>下一篇:</strong>
+            <span></span>
+        </div>
+    </div>
+</div>
+<script>
+    function showNewsDetail(data){
+        var pageNub = $('.container').attr('data-newsPage');
+        var ImgData = '';
+        $('.allWidth h3').html(data[pageNub][0]["title"]);
+        $('.allWidth p .xinwen').html(data[pageNub][1]["xinwen"]);
+        $('.allWidth p .time').html(data[pageNub][2]["time"]);
+        $('.newM p ').html(data[pageNub][3]["p"]);
+
+         // 图片
+        for(var i=0; i<data[pageNub][4]["img"].length; i++){
+            ImgData += '<div class="Imgtitle"></div>' +
+                    '<img src="htmls/news/img/'+ data[pageNub][4]["img"][i] +'"/>' +
+                    '<p class="p'+ i +'"></p>'
+        }
+        $('.newM').append(ImgData);
+
+        // 上下篇
+
+        if(data[parseInt(pageNub)+1] == undefined){
+            $('.prePage span').html('当前为最新新闻')
+        }else{
+            $('.prePage span').html(data[parseInt(pageNub)+1][0]["title"]);
+        }
+
+        if(pageNub == 1){
+            $('.nextPage span').html('当前为最后一篇')
+        }else{
+            $('.nextPage span').html(data[parseInt(pageNub)-1][0]["title"])
+        }
+    }
+    getAjaxData();
+    function getAjaxData(){
+        $.ajax({
+            url : 'htmls/news/newsDetail.json',
+            dataType : "json",
+            success : function(data){
+                showNewsDetail(data)
+            }
+        })
+    }
+
+
+    $('.prePage').on('click',function(){
+        var newPages = parseInt($('.container').attr('data-newsPage'))+1;
+        console.log(newPages)
+    })
+</script>

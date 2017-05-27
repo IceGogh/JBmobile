@@ -9,6 +9,22 @@
 .main0 .newM {
   padding: 30px 20px 0 20px;
 }
+.main0 .newM h2 {
+  height: 40px;
+  line-height: 40px;
+  margin: 0 auto 18px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: normal;
+  overflow: hidden;
+}
+.main0 .newM .Imgtitle {
+  padding: 10px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  line-height: 14px;
+}
 .main0 .allWidth {
   width: 100%;
 }
@@ -20,6 +36,33 @@
   font-size: 15px;
   font-weight: normal;
   overflow: hidden;
+  color: #000;
+  margin-top: 20px;
+}
+.main0 .allWidth p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+  text-indent: .7em;
+}
+.main0 .allWidth p span {
+  font-size: 14px;
+  color: #bbb;
+  text-align: center;
+}
+.main0 .allWidth p strong {
+  color: #bbb;
+  padding: 0 8px;
+  font-weight: normal;
+}
+.main0 .allWidth h3 {
+  font-size: 21px;
+  line-height: 28px;
+  padding: 0 10%;
+  color: #000;
+  font-weight: normal;
+  margin: 30px 0 15px;
+  text-align: center;
 }
 .main0 .pageTitle {
   font-size: 18px;
@@ -42,4 +85,22 @@
 .main0 .pageSelect a.selProduct {
   background-color: #4a4a4a;
   color: #fff;
+}
+.main0 .changePage {
+  margin-top: 20px;
+  border-top: 1px  solid #A6A6A6;
+  border-bottom: 1px  solid #A6A6A6;
+  padding: 5px;
+}
+.main0 .changePage > div {
+  font-size: 12px;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 26px;
+  line-height: 26px;
+}
+.main0 .changePage > div span {
+  text-indent: .7em;
 }

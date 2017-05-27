@@ -1,0 +1,86 @@
+<div class="banner">
+    <img src="htmls/news/img/newsBanner.jpg"/>
+</div>
+<div class="container" data-newsPage="">
+    <div class="allWidth">
+        <h2>
+            企业新闻
+        </h2>
+        <p>致力于实现中国家庭厨房梦! 12年来,我们从未止步···</p>
+    </div>
+    <div class="newM">
+        <div data-newsnub="14">
+            <img src="htmls/news/img/newsMain1.jpg"/>
+            <h2>定制美好生活！嘉宝厨柜2017年度新品发布大会，震撼来袭！</h2>
+        </div>
+        <div data-newsnub="13">
+            <img src="htmls/news/img/newsMain2.png"/>
+            <h2>从心出发，定制美好生活！嘉宝厨柜2017年年会圆满落幕</h2>
+        </div>
+        <div  data-newsnub="12">
+            <img src="htmls/news/img/newsMain3.png"/>
+            <h2>为爱定制 嘉宝感恩 | 2016嘉宝年度大型感恩盛典巅峰开启！</h2>
+        </div>
+        <div  data-newsnub="11">
+            <img src="htmls/news/img/newsMain4.png"/>
+            <h2>【厨房大牌大聚惠】一站式定制厨柜& 厨电的历史性机会</h2>
+        </div>
+        <div  data-newsnub="10">
+            <img src="htmls/news/img/newsMain5.jpg">
+            <h2>跨年钜惠 贺岁献礼 —2016嘉宝厨柜【贺岁狂欢季】震撼来袭!</h2>
+        </div>
+        <div  data-newsnub="09">
+            <img src="htmls/news/img/newsMain6.jpg">
+            <h2>中国家居奥斯卡盛会|嘉宝厨柜衣柜包揽两项全国巅峰大奖！</h2>
+        </div>
+        <div  data-newsnub="08">
+            <img src="htmls/news/img/newsMain7.jpg">
+            <h2>中国家居奥斯卡盛会|嘉宝厨柜衣柜包揽两项全国巅峰大奖！</h2>
+        </div>
+        <div  data-newsnub="07">
+            <img src="htmls/news/img/newsMain8.jpg">
+            <h2>原来定制厨柜可以这么美！高档装修，必选定制！</h2>
+        </div>
+        <div  data-newsnub="06">
+            <img src="htmls/news/img/newsMain9.jpg">
+            <h2>​12年专注定制，一路领跑，成就嘉宝【中国厨柜定制大师】</h2>
+        </div>
+        <div  data-newsnub="05">
+            <img src="htmls/news/img/newsMain10.jpg">
+            <h2>嘉宝厨柜·2016【匠心·极致·超越自我】新春年会华丽绽放！</h2>
+        </div>
+        <div  data-newsnub="04">
+            <img src="htmls/news/img/newsMain11.jpg">
+            <h2>巅峰盛宴,华丽落幕!—嘉宝厨柜【2015年度客户感恩答谢盛典】完美收官！</h2>
+        </div>
+        <div  data-newsnub="03">
+            <img src="htmls/news/img/newsMain12.jpg">
+            <h2>高端访谈 | 做湖南家居制造业的骄傲！——长沙晚报专访嘉宝橱柜董事长肖文波</h2>
+        </div>
+        <div  data-newsnub="02">
+            <img src="htmls/news/img/newsMain13.jpg">
+            <h2>嘉宝橱柜荣获2014“中国定制家居行业十强示范企业”殊荣</h2>
+        </div>
+        <div  data-newsnub="01">
+            <img src="htmls/news/img/newsMain14.jpg"/>
+            <h2>【重磅新闻】嘉宝厨柜与意大利米兰理工大学设计学院签署战略合作，打造世界级的创新研发平台！</h2>
+        </div>
+    </div>
+    <script>
+        $('div[data-newsnub]').on('click',function(){
+            // 传参到下次异步刷新页面
+            var pageNub = $(this).attr('data-newsnub');
+            function loadnews(data){
+                $('.container')
+                        .attr('data-newsPage',pageNub)
+                        .html(data)
+            }
+            $.ajax({
+                url : 'htmls/news/newsDetail.html',
+                success : function(data){
+                    loadnews(data)
+                }
+            });
+        })
+    </script>
+</div>

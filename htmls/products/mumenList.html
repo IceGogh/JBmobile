@@ -1,0 +1,49 @@
+<div class="banner">
+    <img src="htmls/products/img/quanwuBanner.jpg"/>
+</div>
+<div class="iconLine">
+    <ul>
+        <li>
+            <a data-keys="products/chugui">
+                <span></span>
+                <p>橱柜定制</p>
+            </a>
+        </li>
+        <li>
+            <a data-keys="products/quanwu">
+                <span></span>
+                <p>全屋定制</p>
+            </a>
+        </li>
+        <li>
+            <a data-keys="products/dianqi">
+                <span></span>
+                <p>厨房电器</p>
+            </a>
+        </li>
+        <li>
+            <a data-keys="products/shuicao">
+                <span></span>
+                <p>厨房水槽</p>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="pageTitle">
+    木门定制
+</div>
+<div class="pageSelect clearfix">
+    <a data-page="mumenList" data-pageNub="0">现代简约</a>
+    <a data-page="mumenList" data-pageNub="1">欧式经典</a>
+    <a data-page="mumenList" data-pageNub="2">田园牧歌</a>
+    <a data-page="mumenList" data-pageNub="3">新中式</a>
+</div>
+<div class="allWidth">
+    <!--动态添加 list -->
+</div>
+<script>
+    $(function(){
+        loadDetail($('a[data-page]'));
+    })
+</script>
+
