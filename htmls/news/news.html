@@ -29,39 +29,39 @@
             <img src="htmls/news/img/newsMain5.jpg">
             <h2>跨年钜惠 贺岁献礼 —2016嘉宝厨柜【贺岁狂欢季】震撼来袭!</h2>
         </div>
-        <div  data-newsnub="09">
+        <div  data-newsnub="9">
             <img src="htmls/news/img/newsMain6.jpg">
             <h2>中国家居奥斯卡盛会|嘉宝厨柜衣柜包揽两项全国巅峰大奖！</h2>
         </div>
-        <div  data-newsnub="08">
+        <div  data-newsnub="8">
             <img src="htmls/news/img/newsMain7.jpg">
             <h2>中国家居奥斯卡盛会|嘉宝厨柜衣柜包揽两项全国巅峰大奖！</h2>
         </div>
-        <div  data-newsnub="07">
+        <div  data-newsnub="7">
             <img src="htmls/news/img/newsMain8.jpg">
             <h2>原来定制厨柜可以这么美！高档装修，必选定制！</h2>
         </div>
-        <div  data-newsnub="06">
+        <div  data-newsnub="6">
             <img src="htmls/news/img/newsMain9.jpg">
             <h2>​12年专注定制，一路领跑，成就嘉宝【中国厨柜定制大师】</h2>
         </div>
-        <div  data-newsnub="05">
+        <div  data-newsnub="5">
             <img src="htmls/news/img/newsMain10.jpg">
             <h2>嘉宝厨柜·2016【匠心·极致·超越自我】新春年会华丽绽放！</h2>
         </div>
-        <div  data-newsnub="04">
+        <div  data-newsnub="4">
             <img src="htmls/news/img/newsMain11.jpg">
             <h2>巅峰盛宴,华丽落幕!—嘉宝厨柜【2015年度客户感恩答谢盛典】完美收官！</h2>
         </div>
-        <div  data-newsnub="03">
+        <div  data-newsnub="3">
             <img src="htmls/news/img/newsMain12.jpg">
             <h2>高端访谈 | 做湖南家居制造业的骄傲！——长沙晚报专访嘉宝橱柜董事长肖文波</h2>
         </div>
-        <div  data-newsnub="02">
+        <div  data-newsnub="2">
             <img src="htmls/news/img/newsMain13.jpg">
             <h2>嘉宝橱柜荣获2014“中国定制家居行业十强示范企业”殊荣</h2>
         </div>
-        <div  data-newsnub="01">
+        <div  data-newsnub="1">
             <img src="htmls/news/img/newsMain14.jpg"/>
             <h2>【重磅新闻】嘉宝厨柜与意大利米兰理工大学设计学院签署战略合作，打造世界级的创新研发平台！</h2>
         </div>
@@ -76,7 +76,7 @@
                         .html(data)
             }
             $.ajax({
-                url : 'htmls/news/newsDetail.html',
+                url : 'htmls/news/newsDetail'+ pageNub +'.html',
                 success : function(data){
                     loadnews(data)
                 }
