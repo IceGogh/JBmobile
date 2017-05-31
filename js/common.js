@@ -115,10 +115,20 @@
 
 			$.ajax({
 				url:'htmls/'+ Keys +'.html',
+				async:false,		 // makesure all loading complete
 				success:function(data){
 					callbk(data)
 				}
 			});
+
+			// 判断 点击跳转的层级  index ?  chugui？  chuguiList?
+			if($(this).attr('data-selectFlag')){
+				var Nub = $(this).attr('data-selectFlag');
+
+				$('a[data-pagenub="'+ Nub +'"]').trigger("click");
+
+			}
+
 
 			function callbk(data){
 				$('.transfCss').attr('href','css/transfNo.css');
@@ -138,6 +148,8 @@
 					.attr('data-flag','true')
 					.css({backgroundImage:' url("img/mainbottom.png")'});
 
+
+
 				//  after ajax re-loading , the web refresh
 				Transforing($('a[data-keys]'));
 			}
@@ -153,9 +165,7 @@
 	*
 	* */
 	// load img detail
-	loadDetail();
 	function loadDetail(elm){
-		console.log(1);
 		//	click a data-page choose the detail list
 		$('a[data-page]').on('click',function(){
 			var pageNub = $(this).attr('data-pageNub');
@@ -176,7 +186,7 @@
 
 				var productsMain = '';
 				var Length = 1;
-				console.log(KeyWord)
+
 				$.ajax({
 					url : 'htmls/products/json/'+ KeyWord + (products < 9 ? "0"+products : products) +'.json',
 					dataType :'json',
