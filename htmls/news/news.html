@@ -67,13 +67,15 @@
         </div>
     </div>
     <script>
+        var pageNub ;
+        var pageNubMax ;
         $('div[data-newsnub]').on('click',function(){
             // 传参到下次异步刷新页面
-            var pageNub = $(this).attr('data-newsnub');
+            pageNub = $(this).attr('data-newsnub');
             function loadnews(data){
                 $('.container')
                         .attr('data-newsPage',pageNub)
-                        .html(data)
+                        .html(data);
             }
             $.ajax({
                 url : 'htmls/news/newsDetail'+ pageNub +'.html',
