@@ -85,14 +85,19 @@
 
 
 
+/*
 	// toTop
 	$('.toTop').on('click',function(){
 		$('html,body').animate({scrollTop:0},400)
 	});
+*/
 
 
 //  Ajax loading .......
-
+	/*
+	* htmls
+	* ---loading page...
+	* */
 
 	Transforing($('a[data-keys]'));
 
@@ -126,7 +131,8 @@
 				CssLink.href = "css/page.css";
 				document.getElementsByTagName('head')[0].appendChild(CssLink);*/
 
-				$('html,body').animate({scrollTop:0},500);
+				//$('html,body').animate({scrollTop:0},500);
+
 				$('.list2nd').slideUp();
 				$('.list2nd').prev()
 					.attr('data-flag','true')
@@ -139,9 +145,17 @@
 	}
 
 
-
+	/*
+	* htmls
+	* --products
+	* -----loding detail
+	*
+	*
+	* */
 	// load img detail
+	loadDetail();
 	function loadDetail(elm){
+		console.log(1);
 		//	click a data-page choose the detail list
 		$('a[data-page]').on('click',function(){
 			var pageNub = $(this).attr('data-pageNub');
@@ -162,7 +176,7 @@
 
 				var productsMain = '';
 				var Length = 1;
-
+				console.log(KeyWord)
 				$.ajax({
 					url : 'htmls/products/json/'+ KeyWord + (products < 9 ? "0"+products : products) +'.json',
 					dataType :'json',
@@ -176,7 +190,7 @@
 					}
 					for(var i=1; i<Length; i++){
 						productsMain += '<a>'+
-							'<img src="' + Jsondata[(i <=9 ? "0"+i : i)][1]+'"/>'+
+							'<img src="' + Jsondata[(i <=9 ? "0"+i : i)][1]+'" data-productsDetail="'+ product + '" data-imgNub="'+ products + '" data-imgNubNo="' + i +'"/>'+
 							'</a>'+
 							'<h2>'+ Jsondata[(i <=9 ? "0"+i : i)][0] +'</h2>';
 					}
@@ -186,9 +200,35 @@
 					Transforing($('a[data-keys]'));
 					loadDetail($('a[data-page]'));
 
+
+					// 跳转详情    chugui -- chuguilist -- productsDetail
+					var Nub;
+					var NubNo;
+					var DetailUrl='';
+					loadingproductDetail();
+					function loadingproductDetail(){
+						$('img[data-productsDetail]').on('click', function(){
+							var Detail = $(this).attr('data-productsDetail');
+							Nub = $(this).attr('data-imgNub')-1;
+							NubNo = $(this).attr('data-imgNubNo')-1;
+							$.ajax({
+								url :'htmls/products/json/'+ Detail +'.json',
+								dataType:'json',
+								success:function(data){
+									showingproductDetail(data)
+								}
+							})
+						})
+					}
+
+					function showingproductDetail(imgData){
+						for(var i=0; i<imgData[Nub][NubNo].length; i++){
+							DetailUrl += '<img src="'+ imgData[Nub][NubNo][i] +'"/>'
+						}
+						$('.allWidth').html(DetailUrl)
+					}
 				}
 			}
-
 		});
 	}
 
