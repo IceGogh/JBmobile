@@ -53,6 +53,7 @@
 					HideMain.type = "text/css";
 					HideMain.href = "css/mubuHide.css";
 					document.getElementsByTagName('head')[0].appendChild(HideMain);
+					$('.zhuantiCss').remove();
 				});
 				flag2 = !flag2;
 
@@ -151,10 +152,13 @@
 					.attr('data-flag','true')
 					.css({backgroundImage:' url("img/mainbottom.png")'});
 
+				// all refresh to top
+				$('.toTop').promise().done(function(){
+					$(this).trigger('click');
+				});
 
-
-				//  after ajax re-loading , the web refresh
-				Transforing($('a[data-keys]'));
+				/*//  after ajax re-loading , the web refresh
+				Transforing($('a[data-keys]'));*/
 			}
 		});
 	}
@@ -204,9 +208,9 @@
 					}
 
 					$('.allWidth').html(productsMain);
-					//  after ajax re-loading , the web refresh
+					/*//  after ajax re-loading , the web refresh
 					Transforing($('a[data-keys]'));
-					loadDetail($('a[data-page]'));
+					loadDetail($('a[data-page]'));*/
 
 
 					// 跳转详情    chugui -- chuguilist -- productsDetail
@@ -233,7 +237,13 @@
 						for(var i=0; i<imgData[Nub][NubNo].length; i++){
 							DetailUrl += '<img src="'+ imgData[Nub][NubNo][i] +'"/>'
 						}
-						$('.allWidth').html(DetailUrl)
+						$('.allWidth').html(DetailUrl);
+
+
+						// all refresh to top
+						$('.toTop').promise().done(function(){
+							$(this).trigger('click');
+						})
 					}
 				}
 			}
