@@ -92,7 +92,7 @@
 
 	// toTop
 	$('.toTop').on('click',function(){
-		$('html,body').animate({scrollTop:0},400)
+		$('html,body').animate({scrollTop:0},0)
 	});
 
 
@@ -157,8 +157,8 @@
 					$(this).trigger('click');
 				});
 
-				/*//  after ajax re-loading , the web refresh
-				Transforing($('a[data-keys]'));*/
+				//  after ajax re-loading , the web refresh
+				Transforing($('a[data-keys]'));
 			}
 		});
 	}
@@ -208,9 +208,9 @@
 					}
 
 					$('.allWidth').html(productsMain);
-					/*//  after ajax re-loading , the web refresh
+					//  after ajax re-loading , the web refresh
 					Transforing($('a[data-keys]'));
-					loadDetail($('a[data-page]'));*/
+					loadDetail($('a[data-page]'));
 
 
 					// 跳转详情    chugui -- chuguilist -- productsDetail
@@ -272,6 +272,7 @@
 		zhuantiCss.type = "text/css";
 		zhuantiCss.href = "css/zhuanti.css";
 		document.getElementsByTagName('head')[0].appendChild(zhuantiCss);
+		$('html,body').animate({scrollTop:0},0)
 	}
 
 
