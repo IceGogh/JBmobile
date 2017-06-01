@@ -191,7 +191,7 @@
 				var Length = 1;
 
 				$.ajax({
-					url : 'htmls/products/json/'+ KeyWord + (products < 9 ? "0"+products : products) +'.json',
+					url : 'htmls/products/json/'+ KeyWord + (products < 9 ? "0"+products : products) +'.txt',
 					dataType :'json',
 					success : function(data){
 						showIMG(data);
@@ -225,7 +225,7 @@
 							Nub = $(this).attr('data-imgNub')-1;
 							NubNo = $(this).attr('data-imgNubNo')-1;
 							$.ajax({
-								url :'htmls/products/json/'+ Detail +'.json',
+								url :'htmls/products/json/'+ Detail +'.txt',
 								dataType:'json',
 								success:function(data){
 									showingproductDetail(data)

@@ -16,7 +16,7 @@ function pageNext(data){
 }
 
 $.ajax({
-    url : 'htmls/news/newsDetail.json',
+    url : 'htmls/news/newsDetail.txt',
     success : function(data){
         pageNext(data)
     }
