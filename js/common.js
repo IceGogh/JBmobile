@@ -46,6 +46,7 @@
 					$('.logo').addClass('mubulogo');
 					$this.css({color:'#fff'});
 					$('.mubuinner li a ').css({color:"rgba(255,255,255,.7)" ,  "transform": "translate(0) scale(1)"});
+					$('.mubuinner li a.dianshang').css({color:'#f23f1c'});
 					$('.mubuinner > div > a').css({opacity:'1'});
 					var HideMain = document.createElement('link');
 					HideMain.className='HidenM';

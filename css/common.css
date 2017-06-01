@@ -187,6 +187,29 @@ header .topMenus {
   transition: all .6s;
   text-shadow: none;
 }
+.mainbottom li a.dianshang,
+.mubuinner li a.dianshang {
+  color: #f23f1c;
+  opacity: .8;
+}
+.mainbottom li a.dianshang ~ div a:nth-of-type(1),
+.mubuinner li a.dianshang ~ div a:nth-of-type(1) {
+  background: url("../img/dianshang1.png") no-repeat left center;
+  text-indent: 3em;
+  background-size: 32px;
+}
+.mainbottom li a.dianshang ~ div a:nth-of-type(2),
+.mubuinner li a.dianshang ~ div a:nth-of-type(2) {
+  background: url("../img/dianshang2.png") no-repeat left center;
+  text-indent: 3em;
+  background-size: 32px;
+}
+.mainbottom li a.dianshang ~ div a:nth-of-type(3),
+.mubuinner li a.dianshang ~ div a:nth-of-type(3) {
+  background: url("../img/dianshang3.png") no-repeat left center;
+  text-indent: 3em;
+  background-size: 32px;
+}
 .mainbottom li .join,
 .mubuinner li .join {
   background-image: url("../img/mainbottom3.png");
