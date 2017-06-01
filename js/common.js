@@ -5,6 +5,7 @@
 	sildeNav($('.mainbottom li > a '));
 	sildeNav($('.mubuinner li > a '));
 	function sildeNav(elm){
+
 		elm.on('click',function(){
 			// 开始判断
 			// 若 点击未展开的 a
@@ -71,6 +72,7 @@
 					$('.mubuinner > div > a').css({opacity:0});
 				});
 				flag2 = !flag2;
+				//  main   main0  两个类 隐藏/显示 互换
 				$('.HidenM').remove();
 			}
 		});
@@ -80,17 +82,17 @@
 	//  return home page
 	$('.returnHome').on('click',function(){
 		$('.transfCss').attr('href','css/transf.css');
+		// 移除专题页样式
+		$('.zhuantiCss').remove();
 		$('.toTop').trigger('click');
 	});
 
 
 
-/*
 	// toTop
 	$('.toTop').on('click',function(){
 		$('html,body').animate({scrollTop:0},400)
 	});
-*/
 
 
 //  Ajax loading .......
@@ -104,10 +106,13 @@
 
 	// click <a> main Transforing
 	function Transforing(elm){
+
+		// 移除专题页样式
+		$('.zhuantiCss').remove();
+
 		elm.on('click',function(){
 			var Keys = $(this).attr('data-keys');
 			KeyWord = Keys.substr(Keys.indexOf('/')+1);
-
 			//  先判断 mubu 是否放下状态
 			if(!flag2){
 				$('.topMenus span').trigger("click");
@@ -124,9 +129,7 @@
 			// 判断 点击跳转的层级  index ?  chugui？  chuguiList?
 			if($(this).attr('data-selectFlag')){
 				var Nub = $(this).attr('data-selectFlag');
-
 				$('a[data-pagenub="'+ Nub +'"]').trigger("click");
-
 			}
 
 
@@ -156,21 +159,16 @@
 		});
 	}
 
-
 	/*
-	* htmls
-	* --products
-	* -----loding detail
-	*
-	*
-	* */
+	* htmls-- products --- loding detail
+	*/
 	// load img detail
 	function loadDetail(elm){
 		//	click a data-page choose the detail list
 		$('a[data-page]').on('click',function(){
-			var pageNub = $(this).attr('data-pageNub');
-			var product = $(this).attr('data-page');
-			var products = pageNub-0+1;
+			var pageNub = $(this).attr('data-pageNub');		/* 计数 */
+			var product = $(this).attr('data-page');		/* productList分类名 */
+			var products = pageNub-0+1;						/* 初始改 0 为 1 */
 
 			$.ajax({
 				url:'htmls/products/' + product +'.html',
@@ -191,7 +189,7 @@
 					url : 'htmls/products/json/'+ KeyWord + (products < 9 ? "0"+products : products) +'.json',
 					dataType :'json',
 					success : function(data){
-						showIMG(data)
+						showIMG(data);
 					}
 				});
 				function showIMG(Jsondata){
@@ -240,6 +238,30 @@
 				}
 			}
 		});
+	}
+
+
+	//  zhuanti page
+
+	zhuanti();
+	function zhuanti(){
+		$('a[data-zhuanti]').on('click',function(){
+			$.ajax({
+				url : 'htmls/zhuanti/zhuanti.html',
+				success : function(data){
+					loadZhanti(data)
+				}
+			})
+		})
+	}
+	function loadZhanti(data){
+		$('.mainZhuanti').html(data);
+		var zhuantiCss = document.createElement('link');
+		zhuantiCss.className='zhuantiCss';
+		zhuantiCss.rel = "stylesheet";
+		zhuantiCss.type = "text/css";
+		zhuantiCss.href = "css/zhuanti.css";
+		document.getElementsByTagName('head')[0].appendChild(zhuantiCss);
 	}
 
 
