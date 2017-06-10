@@ -257,8 +257,9 @@
 	zhuanti();
 	function zhuanti(){
 		$('a[data-zhuanti]').on('click',function(){
+			var keyWord = $(this).attr('data-zhuanti');
 			$.ajax({
-				url : 'htmls/zhuanti/zhuanti.html',
+				url : 'htmls/zhuanti/' + keyWord + '.html',
 				success : function(data){
 					loadZhanti(data)
 				}
