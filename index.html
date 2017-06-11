@@ -31,6 +31,16 @@
 </head>
 
 <body>
+<!--直接加载专题活动页-->
+<script>
+  setTimeout(function() {
+      var e = document.createEvent("MouseEvents");
+      e.initEvent("click", true, true);
+      document.getElementById("clickMe").dispatchEvent(e);
+
+  }, 1);
+</script>
+
 <div class="mubu">
 	<div class="mubuinner">
       <ul>
@@ -112,11 +122,10 @@
         </div>
 
         <div class="swiper-slide">
-          <a data-zhuanti="zhuanti02">
+          <a id="clickMe" class="zhuanti02" data-zhuanti="zhuanti02">
             <img src="img/zhuanti02.jpg"/>
           </a>
         </div>
-
 
         <div class="swiper-slide">
           <a data-keys="products/yigui">
